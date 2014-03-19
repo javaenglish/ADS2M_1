@@ -145,6 +145,7 @@ public class Controller
 					case 1 : telefones[i] = view.recebeTelefone( "celular novamente: " ); break;
 					case 2 : telefones[i] = view.recebeTelefone( "residencial novamente: " ); break;
 					case 3 : telefones[i] = view.recebeTelefone( "comercial novamente: " ); break;
+					default : System.out.println("Opção Inválida"); 			break;
 					}
 				}		
 			}

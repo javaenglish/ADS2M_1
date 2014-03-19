@@ -141,6 +141,7 @@ public class GameController {
 				, jogador[3].getPontos()
 				, (calculaVencedor() + 1)
 				, jogador[ calculaVencedor() ].getPontos()); break;
+		default : System.out.println("opção inválida"); break;
 		}
 	}
 	
