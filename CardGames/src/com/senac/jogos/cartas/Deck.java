@@ -7,7 +7,8 @@ public class Deck {
 	
 	public Deck() {
 		char[] types = {'C','O','P','E'};
-		String[] numbers = {"A" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" , "J" ," Q" , "K"};
+		String[] numbers = {"A" , "2" , "3" , "4" , "5" , "6" ,
+				"7" , "8" , "9" , "10" , "J" ," Q" , "K"};
 		
 		cards = new Cards[52];
 		numCards = 0;

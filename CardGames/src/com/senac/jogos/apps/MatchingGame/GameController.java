@@ -9,7 +9,7 @@ public class GameController {
 
 	private MatchingGame game;
 	private Deck baralho;
-	private Jogador[] jogador;
+	private Jogador[] player;
 	private GameView view;
 	
 	public GameController() 
@@ -17,15 +17,15 @@ public class GameController {
 		view 	= new GameView();
 		baralho = new Deck();
 		game 	= new MatchingGame(baralho.drawCard());
-		jogador = new Jogador[ quantidadeJogadores() ];
+		player = new Jogador[ quantidadeJogadores() ];
 		
-		for (int i = 0 ; i < jogador.length ; i++)
-			jogador[i] = new Jogador();
+		for (int i = 0 ; i < player.length ; i++)
+			player[i] = new Jogador();
 	}
 
 	public Jogador[] getJogador()
 	{
-		return jogador;
+		return player;
 	}
 
 	/*realiza uma jogada informando se uma das opções foi escolhida
@@ -33,29 +33,29 @@ public class GameController {
 	caso contrario retorna TRUE.*/
 	public boolean realizaJogada(int numeroJogador) 
 	{
-		String op = "jogar";
+		String op = "play";
 		
-		if ( op.equalsIgnoreCase("jogar") ) 								//opção de jogada "jogar".
+		if ( op.equalsIgnoreCase("play") ) 								//opção de jogada "jogar".
 		{																	
 			
 			Cards comprada = baralho.drawCard();							//compra uma carta par ao usuário.
 			
-			view.mostraCarta( comprada.getNumber(), comprada.getType() );	//mostra a carta comprada pelo jogador.
+			view.showCard( comprada.getNumber(), comprada.getType() );	//mostra a carta comprada pelo jogador.
 			
 			int score = game.matchCards( comprada );						//calcula o valor de pontos recebidos pela jogada.
-			jogador[numeroJogador].addPontos( score );						//adiciona esses valores a pontuação do usuário.
+			player[numeroJogador].addPontos( score );						//adiciona esses valores a pontuação do usuário.
 			game.setMesa( comprada );										//coloca a carta comprada pelo usuário na mesa.
-			jogador[ numeroJogador ].setSkipRound(false);
+			player[ numeroJogador ].setSkipRound(false);
 			
 			return true;
 		}
 		
 		if ( op.equalsIgnoreCase("skip") 									//opção de jogada "passar". Jogador nao pode passar a rodada
-				&& !jogador[ numeroJogador ].isSkipRound() )				
+				&& !player[ numeroJogador ].isSkipRound() )				
 		{																	//duas vezes seguidas.
-			jogador[ numeroJogador ].subtractScore( 1 );					//dubtrai um ponto dos pontos do jogador.
-			view.printLine( "Você passou a vez..." );						//informa que o usuário passou uma rodada.
-			jogador[ numeroJogador ].setSkipRound(true);
+			player[ numeroJogador ].subtractScore( 1 );					//dubtrai um ponto dos pontos do jogador.
+			view.printLine( "You skipped this turn..." );						//informa que o usuário passou uma rodada.
+			player[ numeroJogador ].setSkipRound(true);
 			
 			return true;
 		}
@@ -75,8 +75,8 @@ public class GameController {
 	public void showStatus(int numeroJogador) {
 		view.printLine( "" );
 		view.printLine( "Jogador número " + (numeroJogador + 1) );
-		view.showScore(jogador[numeroJogador].getScore());
-		view.mostraCarta( game.getMesa().getNumber() , game.getMesa().getType() );
+		view.showScore(player[numeroJogador].getScore());
+		view.showCard( game.getMesa().getNumber() , game.getMesa().getType() );
 	}
 	
 	//recebe a quantidade de jogadores participantes da partida.
@@ -97,11 +97,11 @@ public class GameController {
 		int maior 	 = -110;
 		int vencedor = 0;
 		
-		for (int i = 0 ; i < jogador.length ; i++)
+		for (int i = 0 ; i < player.length ; i++)
 		{
-			if ( jogador[i].getScore() > maior )
+			if ( player[i].getScore() > maior )
 			{
-				maior = jogador[i].getScore();
+				maior = player[i].getScore();
 				vencedor = i;
 			}
 		}
@@ -111,63 +111,70 @@ public class GameController {
 		return vencedor;
 	}
 	
-	public void mostraResultado(int quantidadeJogadores)
+	public void showResult(int quantidadeJogadores)
 	{
 		switch ( quantidadeJogadores )
 		{
-		case 1 : view.imprimeRank(jogador[0].getScore()); 	break;	//chama o metodo para imprimir o resultado para 1 jogador.
+		case 1 : view.printRank(player[0].getScore()); 	
+		break;	//chama o metodo para imprimir o resultado para 1 jogador.
 				
 				
-		case 2 : view.imprimeRank(jogador[0].getScore()			//chama o metodo para imprimir o resultado para 2 jogadores.
-				, jogador[1].getScore()
+		case 2 : view.printRank(player[0].getScore()			//chama o metodo para imprimir o resultado para 2 jogadores.
+				, player[1].getScore()
 				, (calculaVencedor() + 1)
-				, jogador[ calculaVencedor() ].getScore()); break;
+				, player[ calculaVencedor() ].getScore());
+		break;
 				
-		case 3 : view.imprimeRank(jogador[0].getScore()			//chama o metodo para imprimir o resultado para 3 jogadores.
-				, jogador[1].getScore()
-				, jogador[2].getScore()
+		case 3 : view.printRank(player[0].getScore()			//chama o metodo para imprimir o resultado para 3 jogadores.
+				, player[1].getScore()
+				, player[2].getScore()
 				, (calculaVencedor() + 1)
-				, jogador[ calculaVencedor() ].getScore()); break;
+				, player[ calculaVencedor() ].getScore()); 
+		break;
 				
-		case 4 : view.imprimeRank(jogador[0].getScore()			//chama o metodo para imprimir o resultado para 4 jogadores.
-				, jogador[1].getScore()
-				, jogador[2].getScore()
-				, jogador[3].getScore()
+		case 4 : view.printRank(player[0].getScore()			//chama o metodo para imprimir o resultado para 4 jogadores.
+				, player[1].getScore()
+				, player[2].getScore()
+				, player[3].getScore()
 				, (calculaVencedor() + 1)
-				, jogador[ calculaVencedor() ].getScore()); break;
-		default : System.out.println("opção inválida"); break;
+				, player[ calculaVencedor() ].getScore()); 
+		break;
+		
+		default : System.out.println("opção inválida"); 
+		break;
+		
 		}
 	}
 	
-	public boolean realizaJogadaDuasCartas(int numeroJogador) 
+	public boolean drawTwoCards(int numeroJogador) 
 	{
-		String op = "jogar";
+		String op = "play";
 		
-		if ( op.equalsIgnoreCase("jogar") ) 								
+		if ( op.equalsIgnoreCase("play") ) 								
 		{																	
 			
 			Cards comprada1 = baralho.drawCard();							
 			Cards comprada2 = baralho.drawCard();
 			
-			view.mostraCarta( comprada1.getNumber(), comprada1.getType() );	
-			view.mostraCarta( comprada2.getNumber(), comprada2.getType() );	
+			view.showCard( comprada1.getNumber(), comprada1.getType() );	
+			view.showCard( comprada2.getNumber(), comprada2.getType() );	
 			
 			int score = game.matchCards( comprada1, comprada2 );						
-			jogador[numeroJogador].addPontos( score );						
+			player[numeroJogador].addPontos( score );						
 			
 			game.setMesa( comprada2 );										
 			
-			jogador[ numeroJogador ].setSkipRound(false);
+			player[ numeroJogador ].setSkipRound(false);
 			
 			return true;
 		}
 		
 		if ( op.equalsIgnoreCase("skip") 									
-				&& !jogador[ numeroJogador ].isSkipRound() )				
+				&& !player[ numeroJogador ].isSkipRound() )				
 		{																	
-			jogador[ numeroJogador ].subtractScore( 1 );					
+			player[ numeroJogador ].subtractScore( 1 );					
 			view.printLine( "You skipped this round" );						
-			jogador[ numeroJogador ].setSkipRound(true);
+			player[ numeroJogador ].setSkipRound(true);
 			
 			return true;
 		}

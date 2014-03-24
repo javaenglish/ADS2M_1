@@ -6,8 +6,8 @@ public class MatchingGame {
 
 	private Cards mesa;
 	
-	public MatchingGame(Cards inicial) {
-		mesa = inicial;
+	public MatchingGame(Cards first) {
+		mesa = first;
 	}
 
 	public void setMesa(Cards mesa)

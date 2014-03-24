@@ -20,7 +20,7 @@ public class MatchingGame {
 		}
 		
 		//mostra o resultado de acordo com a quantidade de jogadores.
-		game.mostraResultado( game.getJogador().length );
+		game.showResult( game.getJogador().length );
 	}
 
 }

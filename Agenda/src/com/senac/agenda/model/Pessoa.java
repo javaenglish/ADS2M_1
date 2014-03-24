@@ -5,6 +5,13 @@ public class Pessoa {
 	private String nome;
 	private String telefone;
 
+	
+	public Pessoa(String nome, String telefone) {
+		super();
+		this.nome = nome;
+		this.telefone = telefone;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

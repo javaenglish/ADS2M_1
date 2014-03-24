@@ -3,7 +3,12 @@ package com.senac.aleatorio.model;
 public class Pessoa {
 	String nome;
 	String telefone;
-	String endereco;
+	
+	public Pessoa(String nome, String telefone, String endereco) {
+		super();
+		this.nome = nome;
+		this.telefone = telefone;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -16,12 +21,6 @@ public class Pessoa {
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
 	}
 
 }

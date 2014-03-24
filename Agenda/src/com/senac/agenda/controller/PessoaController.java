@@ -9,7 +9,7 @@ public class PessoaController {
 
 	public void criarContato()
 	{
-		contato = new Pessoa();
+		contato = new Pessoa(null, null);
 		contato.setNome("Rafael");
 		contato.setTelefone("555-1234");
 	}

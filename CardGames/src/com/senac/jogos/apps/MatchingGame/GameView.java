@@ -31,7 +31,7 @@ public class GameView {
 	//imprime a tabela da pontuacao final para quatro jogadores.
 	//informando o vencedor, os pontos do vencedor,
 	//e os potos dos outros jogadores.
-	public void imprimeRank(int pontos1, int pontos2, int pontos3, int pontos4, int vencedor, int pontosVencedor)
+	public void printRank(int pontos1, int pontos2, int pontos3, int pontos4, int vencedor, int pontosVencedor)
 	{
 		out.printf("### Resultado ###%n"
 				+ "Vencedor %d - %d Pontos%n"
@@ -49,7 +49,7 @@ public class GameView {
 	//imprime a tabela da pontuacao final para tres jogadores.
 	//informando o vencedor, os pontos do vencedor,
 	//e os potos dos outros jogadores.
-	public void imprimeRank(int pontos1, int pontos2, int pontos3, int vencedor, int pontosVencedor)
+	public void printRank(int pontos1, int pontos2, int pontos3, int vencedor, int pontosVencedor)
 	{
 		out.printf("### Resultado ###%n"
 				+ "Vencedor %d - %d Pontos%n"
@@ -66,7 +66,7 @@ public class GameView {
 	//imprime a table da pontuacao final para dois jogadores.
 	//informando o vencedor, os pontos do vencedor, 
 	//e os pontos dos outros jogadores.
-	public void imprimeRank(int pontos1, int pontos2, int vencedor, int pontosVencedor)
+	public void printRank(int pontos1, int pontos2, int vencedor, int pontosVencedor)
 	{
 		out.printf("### Resultado ###%n"
 				+ "Vencedor %d - %d Pontos%n"
@@ -80,7 +80,7 @@ public class GameView {
 	
 	//imprime a tabela de pontuação final para um jogador.
 	//informando que é o vencedor e os seus pontos.
-	public void imprimeRank(int pontos)
+	public void printRank(int pontos)
 	{
 		out.printf("### Resultado ###%n"
 				+ "Vencedor %d - %d Pontos"
@@ -90,7 +90,8 @@ public class GameView {
 									, pontos);
 	}
 
-	public void mostraCarta(String number, char type) {
-				
+	//método não implementado corretamente
+	public void showCard (String number, char type) {
+			out.printf(number, type);	
 	}
 }
