@@ -16,10 +16,12 @@ public class Account {
 		this.balance = balance;
 	}
 
+	//action for depositing
 	public void deposit( double value ){
-		balance +=value;
+		setBalance( getBalance() + value );
 	}
 	
+	//cashes out if balance is bigger than value to be cashed, Exception
 	public void cashOut (double value) throws NotEnoughBalanceException{
 		
 		if (  getBalance() < value )
