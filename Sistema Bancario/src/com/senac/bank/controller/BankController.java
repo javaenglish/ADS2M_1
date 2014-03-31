@@ -15,7 +15,7 @@ public class BankController {
 	}
 
 	//method to createAccount and set the type of it
-	public Account createsAccount()
+	public Account createAccount()
 	{
 		Account acc = null;
 		String kindOfAccount = console.addAccountNumber();
@@ -41,7 +41,8 @@ public class BankController {
 		
 		switch ( opt ) {
 		case 1:
-			System.out.println("");
+		
+			break;
 		}
 	}
 	
