@@ -9,7 +9,7 @@ public class BankController {
 	private Console console;
 	private Client client;
 	
-	//constructor
+	//constructor for controller
 	public BankController() {
 		console  = new Console();
 	}
@@ -26,12 +26,14 @@ public class BankController {
 		return acc;
 	
 	}
+	
+	//creates a regular account
 	private Account regularAccount() {
 		
 		return new Account ();
 	}
 
-	//important actions to be done by the system
+	//all the actions to be done by the system
 	public void Options ()	{
 		console.systemOptions();
 		

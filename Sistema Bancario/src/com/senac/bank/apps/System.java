@@ -7,9 +7,9 @@ public class System {
 
 	public static void main(String[] args) {
 	
-		BankController bankCtrl = new BankController();
+		BankController masterController = new BankController();
 		
-		bankCtrl.Options();
+		masterController.Options();
 
 	}
 
