@@ -72,15 +72,21 @@ public class BankController {
 		
 		switch ( opt ) {
 		case 1:
-				addClient();
+				
+			addClient();
+						
 		break;
 		
 		case 2:
-				console.deposit();
+			console.deposit();
 		break;
-		
+			
 		case 3:
-		
+			try{
+				Account account = new Account();
+				int value;
+				account.cashOut(value);
+			} catch ()
 		break;
 		}
 	}

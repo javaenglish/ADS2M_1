@@ -35,6 +35,12 @@ public class Console {
 		return entry.nextDouble();
 		
 	}
+	
+	public int cashOut (){
+		System.out.println("How much would you like to cash?");
+		return entry.nextInt();
+	}
+	
 	public void systemOptions()	{
 		System.out.println( "Options"
 				+ "\n1 - Insert a Client"
