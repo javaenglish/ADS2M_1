@@ -35,7 +35,7 @@ public class Console {
 				+ "\n1 - Insert a Client"
 				+ "\n2 - Deposit"
 				+ "\n3 - Cash Out"
-				+ "\n4 - Invest"
-				+ "\n5 - Exit" );
+				+ "\n4 - Investment"
+				+ "\n0 - Exit" );
 	}
 }
