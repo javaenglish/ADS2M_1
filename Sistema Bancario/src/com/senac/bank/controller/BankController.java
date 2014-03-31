@@ -72,7 +72,16 @@ public class BankController {
 		
 		switch ( opt ) {
 		case 1:
-	
+				addClient();
+		break;
+		
+		case 2:
+				console.deposit();
+		break;
+		
+		case 3:
+		
+		break;
 		}
 	}
 	
