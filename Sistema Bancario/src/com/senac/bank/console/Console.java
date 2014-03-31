@@ -30,6 +30,11 @@ public class Console {
 		return entry.nextDouble();
 	}
 	
+	public double deposit (){
+		System.out.println("How much would you like to deposit?");
+		return entry.nextDouble();
+		
+	}
 	public void systemOptions()	{
 		System.out.println( "Options"
 				+ "\n1 - Insert a Client"
