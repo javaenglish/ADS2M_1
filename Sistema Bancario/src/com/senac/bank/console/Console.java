@@ -19,9 +19,9 @@ public class Console {
 	}
 
 	//action to create account
-	public int addAccountNumber()	{
+	public String addAccountNumber()	{
 		System.out.println( "Please, type the account number: " );
-		return entry.nextInt();
+		return entry.nextLine();
 	}
 	
 	//adding limit to an existing account
