@@ -13,10 +13,8 @@ public class InvestimentAccount extends Account{
 	}
 
 	//action for investing the money according to a specific tax
-	public double investiment (double tax){
-			
-		double invest = (tax * getBalance()) ;
+	public void dividend (double tax)	{
+			setBalance( ( (getBalance() / 100 ) * tax) + getBalance() );
+		}
 		
-		return invest;
-	}
 }

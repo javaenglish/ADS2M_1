@@ -19,6 +19,10 @@ public class Client {
 		this.account = account;
 	}
 	
+	public Client(String addName, Account createAccount) {
+	
+	}
+
 	public String getName() {
 		return name;
 	}

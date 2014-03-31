@@ -9,28 +9,59 @@ public class BankController {
 	private Console console;
 	private Client client;
 	
+	
+	public Console getConsole() {
+		return console;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+	
 	//constructor for controller
 	public BankController() {
 		console  = new Console();
 	}
 
+	public void addClient()
+	{
+		client = new Client( console.addName(), createAccount() );
+	}
+	
 	//method to createAccount and set the type of it
 	public Account createAccount()
 	{
 		Account acc = null;
 		String kindOfAccount = console.addAccountNumber();
 
-		if ( kindOfAccount.startsWith(kindOfAccount, 1))	{
-			acc = regularAccount();
-		}
+			if ( kindOfAccount.startsWith(kindOfAccount, 1))	
+				acc = regularAccount();
+			
+			if ( kindOfAccount.startsWith(kindOfAccount, 2))
+				acc = specialAccount();
+			
+			if ( kindOfAccount.startsWith(kindOfAccount, 3))
+				acc = investmentAccount();
+			
 		return acc;
 	
 	}
 	
 	//creates a regular account
 	private Account regularAccount() {
-		
+	
 		return new Account ();
+	}
+	
+	//creates special account
+	private Account specialAccount() {
+			
+		return specialAccount();
+	}
+	
+	private Account investmentAccount() {
+		
+		return investmentAccount();
 	}
 
 	//all the actions to be done by the system
@@ -41,8 +72,7 @@ public class BankController {
 		
 		switch ( opt ) {
 		case 1:
-		
-			break;
+	
 		}
 	}
 	
