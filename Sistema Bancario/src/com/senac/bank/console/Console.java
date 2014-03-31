@@ -17,7 +17,7 @@ public class Console {
 		System.out.println( "Please add account balance: " );
 		return entry.nextDouble();
 	}
-
+	
 	//action to create account
 	public String addAccountNumber()	{
 		System.out.println( "Please, type the account number: " );

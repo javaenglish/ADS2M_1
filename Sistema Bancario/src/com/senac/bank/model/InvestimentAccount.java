@@ -13,8 +13,10 @@ public class InvestimentAccount extends Account{
 	}
 
 	//action for investing the money according to a specific tax
-	public void investiment (double tax){
-	
-		double investiment = tax * getBalance() ; 
+	public double investiment (double tax){
+			
+		double invest = (tax * getBalance()) ;
+		
+		return invest;
 	}
 }
