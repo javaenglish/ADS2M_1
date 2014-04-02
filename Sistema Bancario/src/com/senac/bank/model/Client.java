@@ -9,20 +9,10 @@ public class Client {
 	String cpf;
 	String phone;
 	String account;
-	
 
-	public Client(String name, String cpf,
-			String phone, String account) {
-		this.name = name;
-		this.cpf = cpf;
-		this.phone = phone;
-		this.account = account;
+	public Client(String string, Account account2) {
+		super();
 	}
-	
-	public Client(String addName, Account createAccount) {
-	
-	}
-
 	public String getName() {
 		return name;
 	}

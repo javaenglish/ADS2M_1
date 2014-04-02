@@ -6,8 +6,8 @@ import com.senac.bank.model.*;
 
 public class BankController {
 
-	private Console console;
-	private Client client;
+	Console console = new Console();
+	Client client = new Client(null, null);
 	
 	
 	public Console getConsole() {
@@ -73,7 +73,7 @@ public class BankController {
 		switch ( opt ) {
 		case 1:
 				
-			addClient();
+				addClient();
 						
 		break;
 		
@@ -82,11 +82,7 @@ public class BankController {
 		break;
 			
 		case 3:
-			try{
-				Account account = new Account();
-				int value;
-				account.cashOut(value);
-			} catch ()
+			
 		break;
 		}
 	}
