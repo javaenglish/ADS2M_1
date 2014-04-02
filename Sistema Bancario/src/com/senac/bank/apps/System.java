@@ -10,7 +10,7 @@ public class System {
 		
 		while(true)
 		
-		masterController.Options();
+		masterController.options();
 		
 		}
 	}
