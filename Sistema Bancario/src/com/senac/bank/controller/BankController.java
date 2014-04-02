@@ -99,6 +99,8 @@ public class BankController {
 		
 		case 4:
 			
+			account.deposit(console.addInvestment());
+			
 		break;
 		}
 	}

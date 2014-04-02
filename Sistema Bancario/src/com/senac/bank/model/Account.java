@@ -21,7 +21,7 @@ public class Account {
 		setBalance( getBalance() + value );
 	}
 	
-	//cashes out if balance is bigger than value to be cashed, Exception
+	//cashes out if balance is bigger than value to be cashed, Exception is thrown
 	public void cashOut (double value) throws NotEnoughBalanceException{
 		
 		if (  getBalance() < value )

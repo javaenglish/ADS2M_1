@@ -41,6 +41,11 @@ public class Console {
 		return entry.nextDouble();
 	}
 	
+	public double addInvestment(){
+		System.out.println( "Please, add the tax to be calculated your investment");
+		return entry.nextDouble();
+	}
+	
 	public void printException( String message ){
 		System.out.println( message );
 	}
