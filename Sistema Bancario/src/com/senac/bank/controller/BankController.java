@@ -8,7 +8,7 @@ public class BankController {
 
 	Console console = new Console();
 	Client client = new Client(null, null);
-	
+	Account account = new Account ();
 	
 	public Console getConsole() {
 		return console;
@@ -31,19 +31,19 @@ public class BankController {
 	//method to createAccount and set the type of it
 	public Account createAccount()
 	{
-		Account acc = null;
+		
 		String kindOfAccount = console.addAccountNumber();
 
 			if ( kindOfAccount.startsWith(kindOfAccount, 1))	
-				acc = regularAccount();
+				account = regularAccount();
 			
 			if ( kindOfAccount.startsWith(kindOfAccount, 2))
-				acc = specialAccount();
+				account = specialAccount();
 			
 			if ( kindOfAccount.startsWith(kindOfAccount, 3))
-				acc = investmentAccount();
+				account = investmentAccount();
 			
-		return acc;
+		return account;
 	
 	}
 	
@@ -73,7 +73,7 @@ public class BankController {
 		switch ( opt ) {
 		case 1:
 				
-				addClient();
+			addClient();
 						
 		break;
 		
@@ -82,6 +82,10 @@ public class BankController {
 		break;
 			
 		case 3:
+			
+		break;
+		
+		case 4:
 			
 		break;
 		}
