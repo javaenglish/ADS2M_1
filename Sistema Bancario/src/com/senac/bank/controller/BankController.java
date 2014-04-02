@@ -22,7 +22,8 @@ public class BankController {
 	public BankController() {
 		console  = new Console();
 	}
-
+	
+	//method to create a new client
 	public void addClient()
 	{
 		client = new Client( console.addName(), createAccount() );
@@ -34,16 +35,19 @@ public class BankController {
 		
 		String kindOfAccount = console.addAccountNumber();
 
+			//sets a regular account
 			if ( kindOfAccount.startsWith(kindOfAccount, 1))	
 				account = regularAccount();
 			
+			//sets a special account
 			if ( kindOfAccount.startsWith(kindOfAccount, 2))
 				account = specialAccount();
 			
+			//sets an investment account
 			if ( kindOfAccount.startsWith(kindOfAccount, 3))
 				account = investmentAccount();
 			
-		return account;
+	return account;
 	
 	}
 	
@@ -78,11 +82,19 @@ public class BankController {
 		break;
 		
 		case 2:
-			console.deposit();
+			
+			account.deposit(console.deposit());
+			
 		break;
 			
-		case 3:
+		case 3: {
 			
+			try {
+				account.cashOut(console.cashOut());
+			} catch (NotEnoughBalanceException e) {
+				console.printException(e.getMessage());
+			}
+		}
 		break;
 		
 		case 4:
