@@ -64,6 +64,7 @@ public class BankController {
 		return specialAccount();
 	}
 	
+	//creates an account to invest the money
 	private Account investmentAccount() {
 		
 		return investmentAccount();

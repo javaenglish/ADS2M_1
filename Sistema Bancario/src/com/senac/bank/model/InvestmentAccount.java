@@ -5,7 +5,7 @@ public class InvestmentAccount extends Account{
 	private int creationDate;
 	private double tax;
 	
-	//constructor method
+	//constructor method for the investment account
 	public InvestmentAccount() {
 		super();
 		

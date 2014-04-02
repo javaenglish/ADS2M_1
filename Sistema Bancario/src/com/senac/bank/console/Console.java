@@ -30,25 +30,32 @@ public class Console {
 		return entry.nextDouble();
 	}
 	
+	
+	//method to handle the operation of deposit
 	public double deposit (){
 		System.out.println( "How much would you like to deposit?" );
 		return entry.nextDouble();
 		
 	}
 	
+	//handles the action to take money out
 	public double cashOut (){
 		System.out.println( "How much would you like to cash?" );
 		return entry.nextDouble();
 	}
 	
+	//possible investments are managed by this method
 	public double addInvestment(){
 		System.out.println( "Please, add the tax to calculate your investment");
 		return entry.nextDouble();
 	}
 	
+	//treats exception if balance is not sufficient to cash out
 	public void printException( String message ){
 		System.out.println( message );
 	}
+	
+	//creates an interactive menu for the user of the system
 	public void systemOptions()	{
 		System.out.println( "Options"
 				+ "\n1 - Insert a Client"

@@ -20,7 +20,7 @@ public class Special extends Account{
 		this.limit = limit;
 	}
 
-	//cashes while balance is bigger than limit;
+	//cashes out while balance is bigger than limit;
 	public void cashOut ( double value ) throws NotEnoughBalanceException
 	{
 		if ( value > getLimit() )
