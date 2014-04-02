@@ -9,6 +9,7 @@ public class BankController {
 	Console console = new Console();
 	Client client = new Client(null, null);
 	Account account = new Account ();
+	InvestmentAccount investment = new InvestmentAccount();
 	
 	public Console getConsole() {
 		return console;
@@ -103,7 +104,7 @@ public class BankController {
 		
 			case 4:
 			
-			account.deposit(console.addInvestment());
+				investment.dividend(console.addInvestment());
 			
 			break;
 		}

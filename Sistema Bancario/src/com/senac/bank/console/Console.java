@@ -42,7 +42,7 @@ public class Console {
 	}
 	
 	public double addInvestment(){
-		System.out.println( "Please, add the tax to be calculated your investment");
+		System.out.println( "Please, add the tax to calculate your investment");
 		return entry.nextDouble();
 	}
 	
