@@ -12,7 +12,7 @@ public class Account {
 		return balance;
 	}
 
-	protected void setBalance( double balance ) {
+	public void setBalance( double balance ) {
 		this.balance = balance;
 	}
 

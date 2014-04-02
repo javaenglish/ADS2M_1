@@ -75,10 +75,14 @@ public class BankController {
 		int opt = 0;
 		
 		switch ( opt ) {
-			case 1:
+			
+			case 1: {
 				
-				addClient();
-						
+				client.setName(console.addName());
+				client.setAccount(console.addAccountNumber());
+				account.setBalance(console.addBalance());
+		
+			}
 				break;
 		
 			case 2:
