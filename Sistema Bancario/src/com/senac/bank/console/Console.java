@@ -31,18 +31,18 @@ public class Console {
 	}
 	
 	public double deposit (){
-		System.out.println("How much would you like to deposit?");
+		System.out.println( "How much would you like to deposit?" );
 		return entry.nextDouble();
 		
 	}
 	
 	public double cashOut (){
-		System.out.println("How much would you like to cash?");
+		System.out.println( "How much would you like to cash?" );
 		return entry.nextDouble();
 	}
 	
-	public void printException(String message){
-		System.out.println(message);
+	public void printException( String message ){
+		System.out.println( message );
 	}
 	public void systemOptions()	{
 		System.out.println( "Options"

@@ -8,7 +8,9 @@ public class System {
 	
 		BankController masterController = new BankController();
 		
-		while (true)
+		while(true)
+		
 		masterController.Options();
+		
 		}
 	}
