@@ -75,34 +75,33 @@ public class BankController {
 		int opt = 0;
 		
 		switch ( opt ) {
-		case 1:
+			case 1:
 				
-			addClient();
+				addClient();
 						
-		break;
+				break;
 		
-		case 2:
+			case 2:
 			
-			account.deposit(console.deposit());
+				account.deposit(console.deposit());
 			
-		break;
+				break;
 			
-		case 3: {
+			case 3: {
 			
-			try {
-				account.cashOut(console.cashOut());
-			} catch (NotEnoughBalanceException e) {
-				console.printException(e.getMessage());
+				try {
+					account.cashOut(console.cashOut());
+						} catch (NotEnoughBalanceException e) {
+							console.printException(e.getMessage());
+						}
 			}
-		}
-		break;
+			break;
 		
-		case 4:
+			case 4:
 			
 			account.deposit(console.addInvestment());
 			
-		break;
+			break;
 		}
 	}
-	
 }
