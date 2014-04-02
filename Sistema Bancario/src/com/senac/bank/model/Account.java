@@ -15,6 +15,22 @@ public class Account {
 	public void setBalance( double balance ) {
 		this.balance = balance;
 	}
+	
+	public int getNumAccount() {
+		return numAccount;
+	}
+
+	public void setNumAccount(int numAccount) {
+		this.numAccount = numAccount;
+	}
+
+	public int getNumVerif() {
+		return numVerif;
+	}
+
+	public void setNumVerif(int numVerif) {
+		this.numVerif = numVerif;
+	}
 
 	//action for depositing
 	public void deposit( double value ){
