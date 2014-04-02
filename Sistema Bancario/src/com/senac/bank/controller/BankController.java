@@ -61,17 +61,17 @@ public class BankController {
 	//creates special account
 	private Account specialAccount() {
 			
-		return specialAccount();
+		return new Account();
 	}
 	
 	//creates an account to invest the money
 	private Account investmentAccount() {
 		
-		return investmentAccount();
+		return new Account();
 	}
 
 	//all the actions to be done by the system
-	public void Options ()	{
+	public void options ()	{
 		console.systemOptions();
 		
 		int opt = 0;
@@ -108,6 +108,7 @@ public class BankController {
 				investment.dividend(console.addInvestment());
 			
 			break;
+			
 		}
 	}
 }
