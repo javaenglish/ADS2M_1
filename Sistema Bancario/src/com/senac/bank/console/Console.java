@@ -55,13 +55,18 @@ public class Console {
 		System.out.println( message );
 	}
 	
+	public void printMessage(){
+		System.out.println( "not a valid option" );
+	}
 	//creates an interactive menu for the user of the system
 	public void systemOptions()	{
+			
 		System.out.println( "Options"
 				+ "\n1 - Insert a Client"
 				+ "\n2 - Deposit"
 				+ "\n3 - Cash Out"
 				+ "\n4 - Investment"
 				+ "\n0 - Exit" );
+			
 	}
 }

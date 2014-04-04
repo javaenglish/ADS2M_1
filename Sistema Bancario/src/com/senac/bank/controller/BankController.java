@@ -75,9 +75,10 @@ public class BankController {
 		console.systemOptions();
 		
 		int opt = 0;
-		
+		do{
 		switch ( opt ) {
 			
+		
 			case 1: {
 				
 				client.setName(console.addName());
@@ -109,6 +110,10 @@ public class BankController {
 			
 			break;
 			
-		}
+			default:
+				console.printMessage();
+			break;
+			}
+		}while (opt !=0);
 	}
 }
