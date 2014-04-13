@@ -110,9 +110,9 @@ public class BankController {
 			
 			break;
 			
-			default:
+			/*default:
 				console.printMessage();
-			break;
+			break;*/
 			}
 		}while (opt !=0);
 	}

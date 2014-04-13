@@ -59,7 +59,7 @@ public class Console {
 		System.out.println( "not a valid option" );
 	}
 	//creates an interactive menu for the user of the system
-	public void systemOptions()	{
+	public int systemOptions()	{
 			
 		System.out.println( "Options"
 				+ "\n1 - Insert a Client"
@@ -67,6 +67,7 @@ public class Console {
 				+ "\n3 - Cash Out"
 				+ "\n4 - Investment"
 				+ "\n0 - Exit" );
+		return entry.nextInt();
 			
 	}
 }
