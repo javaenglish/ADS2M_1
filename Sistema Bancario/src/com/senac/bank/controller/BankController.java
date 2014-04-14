@@ -80,6 +80,7 @@ public class BankController {
 			
 			case 1: {
 				
+				addClient();
 				client.setName(console.addName());
 				client.setAccount(console.addAccountNumber());
 				account.setBalance(console.addBalance());
