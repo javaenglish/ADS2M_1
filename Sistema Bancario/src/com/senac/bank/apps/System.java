@@ -8,8 +8,6 @@ public class System {
 	
 		BankController masterController = new BankController();
 		
-		while(true)
-		
 		masterController.options();
 		
 		}
