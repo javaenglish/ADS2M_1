@@ -4,8 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class LoginServiceTest {
+import static org.mockito.Mockito.*;
 
+public class LoginServiceTest {
+	
 	@Test
 	public void testObjetoContaEstaLogadoQuandoSenhaForIgual() {
 		//setting the environment
