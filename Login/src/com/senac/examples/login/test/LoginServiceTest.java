@@ -15,6 +15,7 @@ import static org.mockito.Mockito.*;
 @RunWith(JUnit4.class)
 public class LoginServiceTest {
 	
+	private LoginService service;
 	private Account account;
 	private AccountDB accountDB;
 	
@@ -24,18 +25,20 @@ public class LoginServiceTest {
 		
 		AccountDB accountDB = mock(AccountDB.class);
 		when(accountDB.find(anyString())).thenReturn(account);
+		
+		service = new LoginService(accountDB);
 	}
+	
 	private void willPasswordMatch(boolean value){
 		when(account.passwordMatches(anyString())).thenReturn(value);
 	}
+	
 	@Test
 	public void testObjetoContaEstaLogadoQuandoSenhaForCorreta() {
 		//setting the environment
 		willPasswordMatch(false);
 		
 		//execution of the method
-		LoginService service = new LoginService(accountDB);
-		
 		service.login("Steve", "CorrectPassword");
 		
 		//execution verification(asserts) 
@@ -46,13 +49,9 @@ public class LoginServiceTest {
 	@Test
 	public void testeContaDeveSerSuspensaQuandoFalharTresLogins(){
 		//preparacao do ambiente
-		account = mock(Account.class);
-				
-		accountDB = mock(AccountDB.class);
-		when(accountDB.find(anyString())).thenReturn(account);
+		willPasswordMatch(false);
 		
 		//execução do teste
-		LoginService service = new LoginService(accountDB);
 		for (int i=0; i < 3; i++)
 			service.login("Steve", "WrongPassword");
 		
@@ -62,13 +61,36 @@ public class LoginServiceTest {
 	
 	@Test
 	public void testObjetoContaEstaLogadoQuandoSenhaForErrada(){
-		when(account.passwordMatches(anyString())).thenReturn(false);	
 	//preparacao do ambiente
 		willPasswordMatch(false);
 		//executa teste
-		LoginService service = new LoginService(accountDB);
+
 		service.login("Steve", "WrongPassword");
 		//verifica resultado
 		verify(account, never()).setLoggedIn(true);
+	}
+	
+	@Test
+	public void testaFalhaDeLoginsSucessoNoTerceiroLogin(){
+	
+		//preparacao do ambiente
+				willPasswordMatch(false);
+				when(account.passwordMatches("CorrectPassword")).thenReturn(true);
+				//executa teste
+				service.login("Steve", "WrongPassword");
+				service.login("Steve", "WrongPassword");
+				service.login("Steve", "CorrectPassword");
+				
+				//verifica resultado
+				verify(account, never()).setLoggedIn(true);
+	}
+
+@Test
+	public void testeNaoDeveBloquearSegundaContaQuandoUmaContaFalhaDuasVezesAntes() {
+		willPasswordMatch(false);
+		Account second = mock(Account.class);
+		when(second.passwordMatches(anyString())).thenReturn(true);
+		
+		when(accountDB.find("Annie")).thenReturn(second);
 	}
 }
