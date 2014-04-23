@@ -35,7 +35,6 @@ public class Console {
 	public double deposit (){
 		System.out.println( "How much would you like to deposit?" );
 		return entry.nextDouble();
-		
 	}
 	
 	public String checkAccount(){
@@ -79,7 +78,7 @@ public class Console {
 	}
 
 	public void addClient(String addName, String addAccountNumber) {
-		
+	
 	}
 
 }

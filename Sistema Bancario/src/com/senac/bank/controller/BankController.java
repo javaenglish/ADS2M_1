@@ -79,9 +79,10 @@ public class BankController {
 		
 			case 1: {
 				
+				
 				console.addClient(console.addName(), console.addAccountNumber());
 				account.setBalance(console.addBalance());
-		
+				
 			}
 				break;
 		
