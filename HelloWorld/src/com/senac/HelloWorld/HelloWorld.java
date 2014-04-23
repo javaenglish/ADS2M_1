@@ -7,6 +7,7 @@ public class HelloWorld {
 	public static void main(String[] args) {
 		
 		String user;
+		@SuppressWarnings("resource")
 		Scanner entry = new Scanner (System.in);
 				
 		System.out.println("Type your name below");

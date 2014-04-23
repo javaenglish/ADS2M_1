@@ -12,6 +12,7 @@ public class HelloWorldView
 	}
 	
 	public String digitaDados(){
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		String digitaDados = entrada.nextLine();
 		return digitaDados;
