@@ -55,6 +55,10 @@ public class Console {
 		System.out.println( message );
 	}
 	
+	public void exit(){
+		System.out.println("Thanks for using our services");
+	}
+	
 	public void printMessage(){
 		System.out.println( "not a valid option" );
 	}
@@ -67,7 +71,11 @@ public class Console {
 				+ "\n3 - Cash Out"
 				+ "\n4 - Investment"
 				+ "\n0 - Exit" );
-		return entry.nextInt();
-			
+		return entry.nextInt();		
 	}
+
+	public void addClient(String addName, String addAccountNumber) {
+		
+	}
+
 }

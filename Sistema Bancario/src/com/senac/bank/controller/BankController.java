@@ -72,18 +72,14 @@ public class BankController {
 
 	//all the actions to be done by the system
 	public void options ()	{
-		console.systemOptions();
 		
-		int opt = 0;
 		do{
-		switch ( opt ) {
+		switch ( console.systemOptions() ) {
 			
 		
 			case 1: {
 				
-				addClient();
-				client.setName(console.addName());
-				client.setAccount(console.addAccountNumber());
+				console.addClient(console.addName(), console.addAccountNumber());
 				account.setBalance(console.addBalance());
 		
 			}
@@ -104,17 +100,24 @@ public class BankController {
 						}
 			}
 			break;
-		
+	
 			case 4:
 			
 				investment.dividend(console.addInvestment());
 			
 			break;
 			
-			/*default:
+			case 0:
+				
+				console.exit();
+				
+			break;
+			
+			default:
 				console.printMessage();
-			break;*/
+			break;
 			}
-		}while (opt !=0);
+		
+		}while (console.systemOptions() !=0);
 	}
 }
