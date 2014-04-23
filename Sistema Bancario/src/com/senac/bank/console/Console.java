@@ -38,6 +38,10 @@ public class Console {
 		
 	}
 	
+	public String checkAccount(){
+		System.out.println("Please inform your account:");
+		return entry.next();
+	}
 	//handles the action to take money out
 	public double cashOut (){
 		System.out.println( "How much would you like to cash?" );

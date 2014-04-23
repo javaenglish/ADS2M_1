@@ -93,6 +93,8 @@ public class BankController {
 			
 			case 3: {
 			
+				console.checkAccount();
+	
 				try {
 					account.cashOut(console.cashOut());
 						} catch (NotEnoughBalanceException e) {
