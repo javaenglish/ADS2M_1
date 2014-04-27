@@ -103,6 +103,7 @@ public class BankController {
 		
 			case 2:
 			
+				console.checkAccount();
 				account.deposit(console.deposit());
 			
 				break;
