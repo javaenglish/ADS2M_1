@@ -7,7 +7,7 @@ import com.senac.bank.model.*;
 public class BankController {
 
 	Console console = new Console();
-	Client client = new Client(null, null);
+	Client client = new Client();
 	Account account = new Account ();
 	InvestmentAccount investment = new InvestmentAccount();
 	
@@ -23,13 +23,7 @@ public class BankController {
 	public BankController() {
 		console  = new Console();
 	}
-	
-	//method to create a new client
-	public void addClient()
-	{
-		client = new Client( console.addName(), createAccount() );
-	}
-	
+		
 	//method to createAccount and set the type of it
 	public Account createAccount()
 	{
@@ -69,6 +63,13 @@ public class BankController {
 		
 		return new Account();
 	}
+	
+	//method to create a new client
+	public void addClient(String addName, String addAccountNumber) {
+		client = new Client();
+		client.setName(addName);
+		client.setAccount(addAccountNumber);
+	}
 
 	//all the actions to be done by the system
 	public void options ()	{
@@ -79,10 +80,24 @@ public class BankController {
 		
 			case 1: {
 				
-				
-				console.addClient(console.addName(), console.addAccountNumber());
-				account.setBalance(console.addBalance());
-				
+			console.addName();
+					if (console.addName().length() !=0)
+						console.clientAdded();
+			
+			console.addAccountNumber();
+					if(account == regularAccount())
+						console.accountTypeOne();
+					if(account == specialAccount())
+						console.accountTypeTwo();
+					if(account == investmentAccount())
+						console.accountTypeThree();			
+					if (console.addAccountNumber().length() !=0)
+						console.accountAdded();
+					
+			account.setBalance(console.addBalance());
+					if (account.getBalance() !=0);
+					console.balanceAdded();
+		
 			}
 				break;
 		
@@ -95,12 +110,15 @@ public class BankController {
 			case 3: {
 			
 				console.checkAccount();
-	
+					
 				try {
 					account.cashOut(console.cashOut());
 						} catch (NotEnoughBalanceException e) {
 							console.printException(e.getMessage());
-						}
+							} finally {
+								console.moneyCashed();
+								}
+							
 			}
 			break;
 	
@@ -121,6 +139,6 @@ public class BankController {
 			break;
 			}
 		
-		}while (console.systemOptions() !=0);
+		}while (console.systemOptions() !=0 );
 	}
 }
