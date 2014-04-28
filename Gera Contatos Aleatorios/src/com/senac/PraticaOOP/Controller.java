@@ -7,13 +7,13 @@ public class Controller
 	private View view;
 	
 	//vetor armazenando os nomes dos contatos
-	private String primeiroNome[] = { "Marcelo" , "Pedro" , "Rafael" , "Claudia" , "José" 
-										, "Adriana" , "Alessandra" , "Bruna" , "Camila" };
+	private String primeiroNome[] = { "Marcos" , "Douglas" , "Rafael" , "Tarcisio" , "Anderson" 
+										, "Mariana" , "Luana" , "Jessica" , "Nicole" };
 	//vetor armazenando os sobrenomes dos contatos.
-	private String segundoNome[]  = { "Abreu" , "Almeida" , "Alves" , "Barreto" , "Bastos"
-										, "Borges" , "Camargo" , "Coelho" , "Dias" , "Silva"
-										, "Dutra" , "Duarte" , "Fernandes" , "Carvalho" 
-										, "Martins" , "Monteiro" , "Barbosa"};
+	private String segundoNome[]  = { "Malcher" , "Tavares" , "Santos" , "Monteiro" , "Sneijder"
+										, "Schmidt" , "Locks" , "Albuquerque" , "Souza" , "Stein"
+										, "Assis" , "Duarte" , "Funez" , "Carvalho" 
+										, "Martins" , "Campos" , "Dutra"};
 	
 	public String[] getPrimeiroNome() {
 		return primeiroNome;

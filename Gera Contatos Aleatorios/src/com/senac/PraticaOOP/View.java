@@ -24,6 +24,7 @@ public class View
 		//retorna String linha é o valor digitado pelo usuário.
 		public String recebeLinha()
 		{
+			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			String linha = input.nextLine();
 			

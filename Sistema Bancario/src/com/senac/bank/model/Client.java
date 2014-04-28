@@ -3,6 +3,7 @@ package com.senac.bank.model;
 
 import com.senac.bank.model.Account;
 
+@SuppressWarnings("unused")
 public class Client {
 	
 	String name;
@@ -10,8 +11,8 @@ public class Client {
 	String phone;
 	String account;
 
-	public Client(String string, Account account2) {
-		super();
+	public Client() {
+		
 	}
 	public String getName() {
 		return name;
