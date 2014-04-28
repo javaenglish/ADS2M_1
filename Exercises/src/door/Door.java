@@ -19,7 +19,9 @@ public class Door {
 		return open;
 	}
 
-	public void openDoor() {
+	public void openDoor() throws PortaTrancadaException{
+		if(isOpen())
+			throw new PortaTrancadaException();
 		this.open = true;
 	}
 
@@ -31,11 +33,13 @@ public class Door {
 		return locked;
 	}
 
-	public void lockDoor() {
-		this.locked = true;
+	public void lockDoor(Key key) {
+		if (!isOpen() && lock == key.getCode())
+			this.locked = true;
 	}
 
-	public void unlockDoor(){
+	public void unlockDoor(Key key){
+		if (lock == key.getCode())
 		this.locked = false;
 			
 	}

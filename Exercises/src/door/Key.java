@@ -2,6 +2,14 @@ package door;
 
 public class Key {
 	
-	protected int code;
+	private int code;
 
+	public Key(int code){ 
+		this.code = code;
+	}
+	
+	public int getCode(){
+		return code;
+	}
+	
 }
