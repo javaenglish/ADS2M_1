@@ -1,11 +1,24 @@
 package room;
 
+import lamp.Lamp;
+
 public class Room {
 	
-	public double size;
-	public String colour;
-	public String kindOfRoom;
+	private double size;
+	private String colour;
+	private String kindOfRoom;
+	private Lamp lamp;
 	
+	public Room() {
+		this.kindOfRoom = new String();
+		this.colour = new String();
+		this.size = 0;
+		this.lamp = new Lamp();
+	}
+	
+	public boolean isIluminado(){
+		return lamp.isState();
+	}
 	
 	public double getSize() {
 		return size;
@@ -30,4 +43,5 @@ public class Room {
 	public void setKindOfRoom(String kindOfRoom) {
 		this.kindOfRoom = kindOfRoom;
 	}
+	
 }
