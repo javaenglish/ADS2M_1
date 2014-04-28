@@ -85,12 +85,28 @@ public class LoginServiceTest {
 				verify(account, never()).setLoggedIn(true);
 	}
 
-@Test
+	@Test
 	public void testeNaoDeveBloquearSegundaContaQuandoUmaContaFalhaDuasVezesAntes() {
 		willPasswordMatch(false);
 		Account second = mock(Account.class);
 		when(second.passwordMatches(anyString())).thenReturn(true);
 		
 		when(accountDB.find("Annie")).thenReturn(second);
+		
+		//execucao teste
+		service.login("Steve", "WrongPassword");
+		service.login("Steve", "WrongPassword");
+		service.login("Annie", "WrongPassword");
+		
+		//verifica execucao
+		verify(second, never()).setLocked(true);
+	}
+
+	@Test(expected= AccountLoginLimitReachedException.class)
+	public void testeNaoPodeLogarQuandoJaEstaLogado() {
+		willPasswordMatch(true);
+		when(account.isLoggedIn()).thenReturn(true);
+		service.login("Steve", "CorrectPassword");
+		
 	}
 }
