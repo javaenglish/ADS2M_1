@@ -10,7 +10,7 @@ public class Door {
 	private Room out;
 	private Room in;
 	
-	private void connectRoom(Room out, Room in){
+	public void connectRoom(Room out, Room in){
 		this.out = out;
 		out.setDoor(this);
 		this.in = in;

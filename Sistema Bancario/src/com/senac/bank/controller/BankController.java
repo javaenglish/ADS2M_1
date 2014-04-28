@@ -78,7 +78,7 @@ public class BankController {
 		switch ( console.systemOptions() ) {
 			
 		
-			case 1: {
+			case 1: 
 				
 			console.addName();
 					if (console.addName().length() !=0)
@@ -98,7 +98,7 @@ public class BankController {
 					if (account.getBalance() !=0);
 					console.balanceAdded();
 		
-			}
+			
 				break;
 		
 			case 2:
