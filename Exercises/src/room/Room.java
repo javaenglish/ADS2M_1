@@ -1,6 +1,7 @@
 package room;
 
 import lamp.Lamp;
+import door.Door;
 
 public class Room {
 	
@@ -8,6 +9,7 @@ public class Room {
 	private String colour;
 	private String kindOfRoom;
 	private Lamp lamp;
+	private Door door;
 	
 	public Room() {
 		this.kindOfRoom = new String();
@@ -44,4 +46,11 @@ public class Room {
 		this.kindOfRoom = kindOfRoom;
 	}
 	
+	public void setDoor(Door door){
+		this.door = door;
+	}
+	
+	public Door getDoor(){
+		return this.door;
+	}
 }

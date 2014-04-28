@@ -1,18 +1,27 @@
 package door;
 
-import door.Key;
+import room.Room;
 
 public class Door {
 	
 	private boolean open;
 	private boolean locked;
 	protected int lock;
+	private Room out;
+	private Room in;
 	
-	
+	private void connectRoom(Room out, Room in){
+		this.out = out;
+		out.setDoor(this);
+		this.in = in;
+		in.setDoor(this);
+	}
 	public Door(boolean state, boolean locked, int lock) {
 		this.open = state;
 		this.locked = locked;
 		this.lock = lock;
+		this.in = null;
+		this.out = null;
 	}
 
 	public boolean isOpen() {
