@@ -19,12 +19,12 @@ public class Pessoa {
 			return name;
 		}
 		
-		public String getEndereco()
+		public String getAddress()
 		{
 			return address;
 		}
 		
-		public String[] getTelefone()
+		public String[] getPhone()
 		{
 			return phone;
 		}
