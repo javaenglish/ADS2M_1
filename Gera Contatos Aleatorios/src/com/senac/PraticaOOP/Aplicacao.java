@@ -5,7 +5,7 @@ public class Aplicacao {
 	public static void main(String[] args) {
 		Controller controlador = new Controller();
 		
-		//instruções para criar e imprimir 50 contatos.
+		//generates fifty contacts
 		for ( int i = 0 ; i < 50 ; i++)
 		{
 			controlador.listarContato(controlador.gerarContatoAleatorio());
