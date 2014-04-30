@@ -7,7 +7,8 @@ public class Account {
 	private double balance;
 	private int numAccount;
 	private int numVerif;
-	
+
+
 	public double getBalance() {
 		return balance;
 	}
