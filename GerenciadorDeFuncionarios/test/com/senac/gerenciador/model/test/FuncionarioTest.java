@@ -21,11 +21,15 @@ public class FuncionarioTest {
 		Funcionario	f1 = new Funcionario();
 		Funcionario f2 = new Funcionario();
 		
-		assertFalse(f.getMatricula() == f2.getMatricula());
+		assertFalse(f.getMatricula() == f1.getMatricula());
 		assertFalse(f1.getMatricula() == f2.getMatricula());
 		assertFalse(f2.getMatricula() == f.getMatricula());
 		
 	}
 	
+	@Test
+	public void testCargoValido() {
+		
+	}
 	
 }
