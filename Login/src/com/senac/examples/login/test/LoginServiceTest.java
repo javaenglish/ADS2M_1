@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 
 import com.senac.examples.login.Account;
 import com.senac.examples.login.AccountDB;
+import com.senac.examples.login.AccountLoginLimitReachedException;
 import com.senac.examples.login.LoginService;
 import org.junit.runners.*;
 import static org.mockito.Mockito.*;
@@ -34,7 +35,7 @@ public class LoginServiceTest {
 	}
 	
 	@Test
-	public void testObjetoContaEstaLogadoQuandoSenhaForCorreta() {
+	public void testObjetoContaEstaLogadoQuandoSenhaForCorreta() throws AccountLoginLimitReachedException {
 		//setting the environment
 		willPasswordMatch(false);
 		
@@ -47,7 +48,7 @@ public class LoginServiceTest {
 	}
 
 	@Test
-	public void testeContaDeveSerSuspensaQuandoFalharTresLogins(){
+	public void testeContaDeveSerSuspensaQuandoFalharTresLogins() throws AccountLoginLimitReachedException {
 		//preparacao do ambiente
 		willPasswordMatch(false);
 		
@@ -60,7 +61,7 @@ public class LoginServiceTest {
 	}
 	
 	@Test
-	public void testObjetoContaEstaLogadoQuandoSenhaForErrada(){
+	public void testObjetoContaEstaLogadoQuandoSenhaForErrada() throws AccountLoginLimitReachedException{
 	//preparacao do ambiente
 		willPasswordMatch(false);
 		//executa teste
@@ -71,7 +72,7 @@ public class LoginServiceTest {
 	}
 	
 	@Test
-	public void testaFalhaDeLoginsSucessoNoTerceiroLogin(){
+	public void testaFalhaDeLoginsSucessoNoTerceiroLogin() throws AccountLoginLimitReachedException{
 	
 		//preparacao do ambiente
 				willPasswordMatch(false);
@@ -86,7 +87,7 @@ public class LoginServiceTest {
 	}
 
 	@Test
-	public void testeNaoDeveBloquearSegundaContaQuandoUmaContaFalhaDuasVezesAntes() {
+	public void testeNaoDeveBloquearSegundaContaQuandoUmaContaFalhaDuasVezesAntes() throws AccountLoginLimitReachedException {
 		willPasswordMatch(false);
 		Account second = mock(Account.class);
 		when(second.passwordMatches(anyString())).thenReturn(true);
@@ -103,7 +104,7 @@ public class LoginServiceTest {
 	}
 
 	@Test(expected= AccountLoginLimitReachedException.class)
-	public void testeNaoPodeLogarQuandoJaEstaLogado() {
+	public void testeNaoPodeLogarQuandoJaEstaLogado() throws AccountLoginLimitReachedException {
 		willPasswordMatch(true);
 		when(account.isLoggedIn()).thenReturn(true);
 		service.login("Steve", "CorrectPassword");
