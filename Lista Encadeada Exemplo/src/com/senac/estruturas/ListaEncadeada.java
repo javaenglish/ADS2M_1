@@ -5,7 +5,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	@SuppressWarnings("unused")
 	private Nodo<T> tail;
 	
-	
+	//Implementação de Lista recursiva
 	public void remove (T valor){
 		Nodo<T> nodo = procura(valor);
 		nodo.remove();
