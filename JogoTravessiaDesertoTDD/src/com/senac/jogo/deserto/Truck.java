@@ -8,5 +8,11 @@ public class Truck {
 		return MaxGas;
 	}
 	
+	public void fillGas (){
+		if (MaxGas  = 6 ){
+			
+		}
+	}
+	
 	
 }
