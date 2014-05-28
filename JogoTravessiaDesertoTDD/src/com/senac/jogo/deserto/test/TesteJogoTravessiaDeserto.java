@@ -28,7 +28,7 @@ public class TesteJogoTravessiaDeserto {
 
 	@Test
 	public void SoPodeRecarregarSeNaoEstaCheio() {
-		assertEquals("Not yet implemented");
+		equals("Not yet implemented");
 	}
 
 }
