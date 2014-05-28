@@ -8,16 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.senac.jogo.deserto.Truck;
+
 public class TesteJogoTravessiaDeserto {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	private Truck truck;
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -28,7 +23,8 @@ public class TesteJogoTravessiaDeserto {
 
 	@Test
 	public void SoPodeRecarregarSeNaoEstaCheio() {
-		equals("Not yet implemented");
+		truck.addGas();
+		assertFalse (truck.getCapacity() > 6);
 	}
 
 }
