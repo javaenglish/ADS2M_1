@@ -6,5 +6,6 @@ public interface Account {
 	public void setLoggedIn (boolean state);
 	public void setLocked(boolean b);
 	public boolean isLoggedIn();
+	public boolean isLocked();
 
 }
