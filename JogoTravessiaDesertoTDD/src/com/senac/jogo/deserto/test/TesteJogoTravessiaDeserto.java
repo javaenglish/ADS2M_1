@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.senac.jogo.deserto.MaxCapacityException;
 import com.senac.jogo.deserto.Truck;
 
 public class TesteJogoTravessiaDeserto {
@@ -26,9 +27,12 @@ public class TesteJogoTravessiaDeserto {
 		Truck truck = new Truck();
 		assertEquals(6, truck.getCapacity());
 	}
+	
 	@Test
-	public void soPodeCarregarSeNaoEstaCheio() {
-		
+	public void soDiminuiSeTemCarga() {
+		Truck truck = new Truck();
+		truck.takeGasOut();
+		assertEquals(5, truck.getCapacity());
 	}
 
 }
