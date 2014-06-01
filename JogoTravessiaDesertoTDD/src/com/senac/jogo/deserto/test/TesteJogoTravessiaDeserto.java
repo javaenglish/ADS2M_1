@@ -22,9 +22,11 @@ public class TesteJogoTravessiaDeserto {
 	}
 
 	@Test
-	public void SoPodeRecarregarSeNaoEstaCheio() {
+	public void testeCriarCaminhaoInicializaComCargaSeis() {
 		Truck truck = new Truck();
 		assertEquals(6, truck.getCapacity());
 	}
+	@Test
+	public void 
 
 }
