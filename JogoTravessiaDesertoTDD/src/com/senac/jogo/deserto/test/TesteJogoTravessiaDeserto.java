@@ -23,8 +23,8 @@ public class TesteJogoTravessiaDeserto {
 
 	@Test
 	public void SoPodeRecarregarSeNaoEstaCheio() {
-		truck.addGas();
-		assertFalse (truck.getCapacity() > 6);
+		Truck truck = new Truck();
+		assertEquals(6, truck.getCapacity());
 	}
 
 }
