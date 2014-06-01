@@ -34,5 +34,14 @@ public class TesteJogoTravessiaDeserto {
 		truck.takeGasOut();
 		assertEquals(5, truck.getCapacity());
 	}
+	
+	@Test
+	public void naoPodeCarregarSeEstaCompletamenteCheio() throws MaxCapacityException{
+		Truck truck = new Truck ();
+		
+		truck.addGas();
+		assertEquals(6, truck.getCapacity());
+		truck.fullGas();
+	}
 
 }
