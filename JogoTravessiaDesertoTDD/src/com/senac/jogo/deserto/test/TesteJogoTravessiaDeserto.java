@@ -27,6 +27,8 @@ public class TesteJogoTravessiaDeserto {
 		assertEquals(6, truck.getCapacity());
 	}
 	@Test
-	public void 
+	public void soPodeCarregarSeNaoEstaCheio() {
+		
+	}
 
 }
